@@ -1,0 +1,20 @@
+package example.demo.DAO;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import example.demo.DTO.Employee;
+
+@Repository
+public interface EmpDAO extends JpaRepository<Employee, Long>{
+	// cho phép Select, Update, Delete
+	
+	// search by name
+	Employee findByName(String name);
+}
+
+//Tất cả các loại repository trong Spring Data đều extends từ một thằng interface chung, 
+//tên là Repository interface
+//Nó cung cấp các phương thức CRUD cơ bản như thêm, sửa, xóa, tìm kiếm .....
+//JpaRepository interface extends PagingAndSortingRepository
+//PagingAndSortingRepository extends CrudRepository.

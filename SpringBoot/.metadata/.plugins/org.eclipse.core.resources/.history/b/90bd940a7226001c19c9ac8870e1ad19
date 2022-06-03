@@ -1,0 +1,64 @@
+package example.demo.Controller;
+
+
+import java.net.http.HttpResponse;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import example.demo.DTO.Employee;
+import example.demo.Service.EmpServiceImp;
+
+@RestController
+@CrossOrigin(origins =  "http://localhost:4200")
+@RequestMapping(name = "/api")
+public class EmpController {
+	@Autowired
+	EmpServiceImp imp;
+	
+	
+	@GetMapping("/")
+	public String getStarted() {
+		return "<h2>Get Started</h2>";
+	}
+	
+	@GetMapping("/employees")
+	public ResponseEntity<List<Employee>> getAll(){
+		return ResponseEntity.ok(imp.getListEmp());
+	}
+	
+	@PostMapping("/employess")
+	public ResponseEntity<String> createEmp(@RequestBody Employee e){
+		
+		boolean check = imp.createEmp(e);
+		if (check) {
+			return new ResponseEntity<String>("Tạo thành công",HttpStatus.OK);
+		}
+		return new ResponseEntity<String>("Đã có lỗi xảy ra",HttpStatus.CONFLICT); 
+		
+	}
+	
+	@PutMapping("/employess/{id}")
+	public ResponseEntity<String> updateEmp(@PathVariable Long id, @RequestBody Employee e){
+		boolean check =  imp.updateEmp(id, e);
+		if (check) {
+			return
+		}
+		
+	}
+	
+	
+
+}
+
+

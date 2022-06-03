@@ -1,0 +1,45 @@
+package example.demo.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import example.demo.DAO.EmpDAO;
+import example.demo.DTO.Employee;
+
+public class EmpServiceImp implements EmpService{
+	
+	@Autowired
+	private EmpDAO empDAO;
+	
+	@Override
+	public List<Employee> getListEmp() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee getEmp(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean createEmp(Employee emp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateEmp(Long id, Employee emp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmp(Long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

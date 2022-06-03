@@ -1,0 +1,11 @@
+package example.demo.Service;
+
+import java.util.List;
+
+import example.demo.DTO.Employee;
+
+public interface EmpService {
+	public List<Employee> getListEmp(){
+		
+	}
+}

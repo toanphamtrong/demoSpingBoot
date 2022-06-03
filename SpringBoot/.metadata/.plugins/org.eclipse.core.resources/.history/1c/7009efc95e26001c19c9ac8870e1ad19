@@ -1,0 +1,9 @@
+package example.demo.DAO;
+
+import org.springframework.data.repository.CrudRepository;
+
+import example.demo.DTO.Employee;
+
+public class EmpDAO implements CrudRepository<Employee, long id>{
+
+}

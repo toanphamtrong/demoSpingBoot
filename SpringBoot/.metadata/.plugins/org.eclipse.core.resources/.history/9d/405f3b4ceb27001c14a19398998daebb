@@ -1,0 +1,18 @@
+package example.demo.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import example.demo.DTO.Employee;
+
+public interface EmpService {
+	
+	
+	public List<Employee> getListEmp();
+	public Employee getEmp(Long id);
+	public Optional<Employee> getEmpById(Long id);
+	public boolean createEmp(Employee emp);
+	public boolean updateEmp(Long id, Employee emp);
+	public boolean deleteEmp(Long id);
+	public List<Employee> findEmpByName();
+}

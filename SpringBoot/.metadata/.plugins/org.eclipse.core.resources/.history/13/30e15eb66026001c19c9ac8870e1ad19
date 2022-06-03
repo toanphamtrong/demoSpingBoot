@@ -1,0 +1,16 @@
+package example.demo.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import example.demo.DAO.EmpDAO;
+import example.demo.DTO.Employee;
+
+public interface EmpService {
+	
+	
+	public List<Employee> getListEmp(){
+		
+	}
+}

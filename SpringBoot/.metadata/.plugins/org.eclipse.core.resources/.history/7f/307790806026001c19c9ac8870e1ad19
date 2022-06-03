@@ -1,0 +1,5 @@
+package example.demo.Service;
+
+public interface EmpService {
+	
+}

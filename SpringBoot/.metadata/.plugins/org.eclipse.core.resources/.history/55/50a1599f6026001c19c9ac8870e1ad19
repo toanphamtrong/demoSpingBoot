@@ -1,0 +1,17 @@
+package example.demo.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import example.demo.DTO.Employee;
+
+public interface EmpService {
+	
+	@Autowired
+	
+	
+	public List<Employee> getListEmp(){
+		
+	}
+}
